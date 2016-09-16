@@ -1,0 +1,20 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+<div class="col-sm-offset-2 col-sm-8">
+  <div class="col-sm-2 post-header dotted-bottom">
+    <div class="post-title">{{ post.title }}</div>
+    {% if post.published_date %}
+      <div class="post-date">{{ post.pusblished_date }}</div>
+    {% endif %}
+  </div>
+  <div class="col-sm-8 post">
+    <p class="post-text">{{ post.text|linebreaksbr }}</p>
+    <footer class="post-footer">
+      {% if user.is_superuser %}
+        <a href="{%	url	'update_post'	pk=post.pk	%}">edit</a> <a href="{%	url	'delete_post'	pk=post.pk	%}">delete</a>
+      {% endif %}
+    </footer>
+  </div>
+</div>
+{% endblock %}

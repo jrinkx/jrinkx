@@ -1,0 +1,32 @@
+{% extends 'core/base.html' %}
+{% load staticfiles %}
+{% block content %}
+  <div class="row">
+    <div class="container-fluid text-center">
+      <h2><b>Rudix Jrinkx</b></h2>
+      <img src="{% static 'img/logo.png' %}" class="img-responsive img-circle" style="display:inline" alt="Rudix Jrinkx" width="300" height="300">
+      <p style="padding-top:15px;">Ku kutip banyak kata dari mereka yang tekemuka,<br />
+        hanya untuk melepas dahagaku akan arti kehidupan.</p>
+    </div>
+  </div>
+  <!-- supporter tools -->
+  <div class="row">
+    <div class="container my-tools">
+      <div class="row col-sm-12">
+        <div class="col-sm-4 text-center" style="padding:0 30px;">
+          <img src="{% static 'img/gnu-linux.png' %}" class="img img-responsive" width="400" height="100">
+          <h5 style="clear: left;">Berawal dari <i>newbei</i> yang selalu penasaran untuk mencoba, hingga akhirnya terinfeksi akut dengan GNU/Linux OS.<h5>
+        </div>
+        <div class="col-sm-4 text-center" style="padding:0 30px;">
+          <img src="{% static 'img/django.png' %}" class="img img-responsive" width="400" height="100">
+          <h5 style="clear: left;">Python adalah salah satu bahasa program yang selalu hadir hampir di setiap distro GNU/Linux.
+          Tentunya menarik untuk dipelajari dan akhirnya membawa saya ke Django framework.<h5>
+        </div>
+        <div class="col-sm-4 text-center" style="padding:0 30px;">
+          <img src="{% static 'img/coffee.png' %}" class="img img-responsive" width="400" height="100">
+          <h5 style="clear: left;">Komputer + Internet + Secangkir coffee merupakan paket komplit yang pas untuk menghabiskan waktu.<h5>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

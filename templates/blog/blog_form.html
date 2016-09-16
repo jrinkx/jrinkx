@@ -1,0 +1,24 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+  <div class="row">
+    <div class="col-sm-offset-1 col-sm-9">
+      <a href="{% url 'blog:blog_admin' %}"><button class="btn btn-danger btn-sm" title="Back to post lists">Back</button></a>
+      <p class="text-center blog-form-title">Create or Edit post</p>
+      <form method="post" id="post-form">{% csrf_token %}
+        {% for field in form %}
+          <div class="col-sm-1">{{ field.label_tag }}</div>
+          <div class="col-sm-11">{{ field }}</div>
+        {% endfor %}
+        <div class="col-xs-1 visible-xs btn-bottom-xs">
+          <button type="submit" name="save" class="btn btn-success btn-sm" form="post-form" title="Save post">>Save</button>
+          <button type="submit" name="publish" class="btn btn-info btn-sm" form="post-form" title="Publish post">>Publish</button>
+        </div>
+      </form>
+    </div>
+    <div class="col-sm-offset-10 col-sm-1 affix hidden-xs btn-fixed-right">
+      <button type="submit" name="save" class="btn btn-success btn-sm" form="post-form"  title="Save post">Save</button>
+      <button type="submit" name="publish" class="btn btn-info  btn-sm" form="post-form" title="Publish post">>Publish</button>
+    </div>
+  </div>
+{% endblock %}

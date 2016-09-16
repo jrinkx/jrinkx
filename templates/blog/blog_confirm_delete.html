@@ -1,0 +1,14 @@
+{% extends 'core/base.html' %}
+{% block content %}
+<div class="row">
+  <div class="col-sm-offset-1 col-sm-10 delete-form">
+    <form method="post">{% csrf_token %}
+      <h2>Are you sure you want to delete post "{{ object }}" ?</h2>
+      <div class="btn-group-lg">
+        <button type="submit" class="btn btn-danger" name="i-am-sure">Yes, I'm sure</button>
+        <button type="submit" class="btn btn-info" name="not-sure">No, Take me back</button>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}

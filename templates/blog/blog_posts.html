@@ -1,0 +1,32 @@
+{% extends 'core/base.html' %}
+{% load staticfiles %}
+{% load bleach_tags %}
+
+{% block content %}
+<div class="col-sm-offset-2 col-sm-8">
+  {% if user.is_superuser %}
+    <div class="row btn-admin">
+      <a href="{% url 'blog:blog_admin' %}"><button class="btn pull-right">Admin</button></a>
+    </div>
+  {% endif %}
+  <div class="row blog-header-row">
+  </div>
+  <div class="row post-row bg-white">
+    {% for post in posts %}
+    <div class="post-container">
+      <div class="col-sm-2 post-header">
+        <div class="post-title text-right dotted-bottom">{{	post.title	}}</div>
+        <div class="post-date">{{ post.published_date.date }}</div>
+        <div class="post-date">{{ post.published_date.time }}</div>
+      </div>
+      <div class="col-sm-8 post">
+        <p class="post-text">{{ post.text|bleach|linebreaksbr }}</p>
+        <footer class="post-footer">
+        </footer>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
