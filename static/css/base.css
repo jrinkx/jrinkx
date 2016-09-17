@@ -102,7 +102,7 @@
   text-decoration: none;
 }
 .post-list-container {
-  min-height: 58vh;
+  min-height: 85vh;
 }
 
 /* blog form */
@@ -110,6 +110,10 @@
   font-size: 1.3em;
   font-weight: bold;
 }
+.blog-form-container {
+  min-height: 85vh;
+}
+
 .input-text, .input-title {
   background-color: #f5f5f5;
   margin-bottom: 20px;
